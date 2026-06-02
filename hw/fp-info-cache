@@ -1,4 +1,4 @@
-27323849360933293
+27325791260414769
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -71434,6 +71434,13 @@ ESP32-S3-WROOM-1
 0
 62
 41
+Library
+EVQPUC02K
+EVQ-PUC02K-3
+Switch
+0
+4
+4
 Library
 HRO-TYPE-C-31-M-12
 USB Type-C Receptacle, 16-Pin, HRO Electronics TYPE-C-31-M-12 (LCSC C165948)
