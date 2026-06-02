@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WSPR-ease Control Panel</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>WSPR-ease</h1>
+      <p class="subtitle">Multi-band WSPR Beacon Controller</p>
+    </header>
+
+    <div class="status-bar">
+      <div class="status-item">
+        <span class="label">Server</span>
+        <span id="server-status" class="value status-offline">OFFLINE</span>
+      </div>
+      <div class="status-item">
+        <span class="label">RSSI</span>
+        <span id="wifi-rssi" class="value">--</span>
+      </div>
+      <div class="status-item">
+        <span class="label">TX</span>
+        <span id="tx-status" class="value">Idle</span>
+      </div>
+      <div class="status-item">
+        <span class="label">GNSS</span>
+        <div class="gnss-details">
+          <span id="gnss-status" class="value">No Lock</span>
+          <span id="gnss-pos" class="value-small"></span>
+          <span id="gnss-alt" class="value-small"></span>
+          <span id="gnss-quality" class="value-small"></span>
+        </div>
+      </div>
+      <div class="status-item">
+        <span class="label">Time (UTC)</span>
+        <span id="utc-time" class="value">--:--:--</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Next TX</span>
+        <span id="next-tx" class="value">--:--</span>
+      </div>
+    </div>
+
+    <div class="tx-bar">
+      <button id="trigger-tx" class="btn btn-primary">Trigger TX Now</button>
+    </div>
+
+    <div class="save-bar">
+      <button id="cancel-changes" class="btn btn-secondary" disabled>Cancel</button>
+      <button id="save-all" class="btn btn-primary" disabled>Save</button>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="config">Configuration</button>
+      <button class="tab" data-tab="schedule">Schedule</button>
+      <button class="tab" data-tab="status">Status</button>
+      <button class="tab" data-tab="files">Files</button>
+    </nav>
+
+    <main>
+      <!-- Configuration Tab -->
+      <div id="config-tab" class="tab-content active">
+        <section class="card">
+          <h2>Station Identity</h2>
+          <div class="form-group">
+            <label for="callsign">Callsign:</label>
+            <input type="text" id="callsign" placeholder="W1ABC">
+          </div>
+          <div class="form-group">
+            <label for="grid">Grid Square:</label>
+            <input type="text" id="grid" placeholder="FN42" maxlength="6">
+          </div>
+          <div class="form-group">
+            <label for="power">Power (dBm):</label>
+            <select id="power">
+              <option value="0">0 (1mW)</option>
+              <option value="3">3 (2mW)</option>
+              <option value="7">7 (5mW)</option>
+              <option value="10">10 (10mW)</option>
+              <option value="13">13 (20mW)</option>
+              <option value="17">17 (50mW)</option>
+              <option value="20">20 (100mW)</option>
+              <option value="23">23 (200mW)</option>
+              <option value="27">27 (500mW)</option>
+              <option value="30" selected>30 (1W)</option>
+              <option value="33">33 (2W)</option>
+              <option value="37">37 (5W)</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Enabled Bands</h2>
+          <div id="bands-list"></div>
+        </section>
+
+      </div>
+
+      <!-- Schedule Tab -->
+      <div id="schedule-tab" class="tab-content">
+        <section class="card">
+          <h2>Band Selection Mode</h2>
+          <div class="form-group">
+            <label for="mode">Mode:</label>
+            <select id="mode">
+              <option value="manual">Manual Only</option>
+              <option value="round-robin">Round Robin</option>
+              <option value="random">Random</option>
+              <option value="list">Band List</option>
+            </select>
+          </div>
+          <div class="form-group" id="band-list-group" style="display:none;">
+            <label for="band-list-input">Band List (comma-separated, repeats for weighting):</label>
+            <input type="text" id="band-list-input" placeholder="20m,20m,40m,30m">
+            <small class="help-text">Example: "20m,20m,40m" makes 20m twice as likely</small>
+          </div>
+          <div class="form-group">
+            <label for="interval">Interval (minutes):</label>
+            <input type="number" id="interval" value="10" min="2" max="60">
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Band Time Windows</h2>
+          <p class="help-text">Configure when each band is eligible for transmission. Disabled windows mean the band is always eligible (if enabled).</p>
+          <div id="time-windows-list"></div>
+        </section>
+
+      </div>
+
+      <!-- Status Tab -->
+      <div id="status-tab" class="tab-content">
+        <section class="card">
+          <h2>System Status</h2>
+          <pre id="status-json"></pre>
+        </section>
+      </div>
+
+      <!-- Files Tab -->
+      <div id="files-tab" class="tab-content">
+        <section class="card">
+          <h2>File Manager</h2>
+          <div id="file-list"></div>
+          <div class="file-upload">
+            <input type="file" id="file-input" hidden>
+            <button id="upload-btn" class="btn btn-primary">Upload File</button>
+            <button id="refresh-files" class="btn btn-secondary">Refresh</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
