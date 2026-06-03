@@ -1248,6 +1248,12 @@
           "label": "LCSC_PN",
           "name": "LCSC_PN",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Winding",
+          "name": "Winding",
+          "show": false
         }
       ],
       "filter_string": "",
