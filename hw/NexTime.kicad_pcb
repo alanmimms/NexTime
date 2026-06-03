@@ -22065,7 +22065,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "c8d54dc9-42c4-43c4-a02a-b1272f934815")
+			(uuid "e193e3b3-3b16-4076-8b9d-85b8cba23c35")
 		)
 		(fp_rect
 			(start -4.13 -8.92)
@@ -22076,7 +22076,7 @@
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "d899bf11-3657-49c2-9c8c-fde347d8eeb9")
+			(uuid "8f636d42-21f6-4c65-bbe0-ca3f864eab29")
 		)
 		(pad "1" smd rect
 			(at -2.5 -3.15)
@@ -22499,6 +22499,18 @@
 			(uuid "69aa479b-a13f-448b-9038-15bcefe0374d")
 		)
 		(embedded_fonts no)
+		(model "/home/alan/ham/NexTime/symbols/ER-CON40HB-2.step"
+			(opacity 0.7800)
+			(offset
+				(xyz 19.9 5.5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -0 -0 -0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0402_1005Metric"
 		(layer "F.Cu")
