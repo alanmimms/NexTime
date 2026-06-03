@@ -1,4 +1,4 @@
-27325791260414769
+27327571708879026
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -71427,6 +71427,13 @@ Crystal or Oscillator
 0
 4
 4
+Library
+ER-CON40HB-2
+
+
+0
+42
+40
 Library
 ESP32-S3-WROOM-1
 2.4 GHz Wi-Fi and Bluetooth module  https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf
