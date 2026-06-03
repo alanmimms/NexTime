@@ -1,0 +1,119 @@
+(footprint "KEYSTONE-3035"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Coin Cell Battery Holders THM COIN CELL RETAINER (20MM)")
+	(tags "coin cell battery holder pin and paste")
+	(property "Reference" "BH**"
+		(at 0 -11.2 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "58a7a54d-c9b1-4e67-ab11-dbcece03eb4b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "CR2032"
+		(at 0 -9.7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "c7fc79e9-7ab0-4c9c-905d-1e95b0edaabc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.mouser.com/datasheet/3/201/1/3035.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b3a87fad-6e34-4299-b4ba-aac8d24174d6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Coin Cell Battery Holders THM COIN CELL RETAINER (20MM)"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ba4198ce-1634-4a4c-a55a-e7c49de215ae")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center 0 0)
+		(end 10 0)
+		(stroke
+			(width 0.1)
+			(type dash)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "da81b1e0-a376-4b8a-9c34-140628bd0b8e")
+	)
+	(fp_text user "CR2032"
+		(at -3 11.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "b08b2686-daf6-4087-bf82-5122eaa4f588")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -8.2 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "e20a1ff5-0c38-4e0f-9600-8c59868a3dad")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -10.795 0)
+		(size 3.5 3.5)
+		(drill 2.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "29c59018-84a6-436c-9da9-a625450d34e4")
+	)
+	(pad "1" thru_hole circle
+		(at 10.795 0)
+		(size 3.5 3.5)
+		(drill 2.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6e46bb17-178f-4586-83a2-9bcf6de61be6")
+	)
+	(pad "2" smd rect
+		(at 0 0)
+		(size 2 2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 45)
+		(uuid "38b1cd87-564c-4cf9-b226-1ea8823f7584")
+	)
+	(embedded_fonts no)
+)

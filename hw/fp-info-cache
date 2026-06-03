@@ -1,4 +1,4 @@
-27327571781258201
+27329352307304472
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -71455,6 +71455,13 @@ USB-C USB 2.0 16-pin HRO
 0
 32
 20
+Library
+KEYSTONE-3035
+Coin Cell Battery Holders THM COIN CELL RETAINER (20MM)
+coin cell battery holder pin and paste
+0
+3
+2
 Library
 QFN50P300X300X60-20N-D
 UFQFPN203*3
